@@ -95,3 +95,21 @@ if(val=="OTRO")
 else
   element.style.display='none';
 }
+
+
+//Auto
+autocomplete(document.getElementById("persona1"), countries);
+autocomplete(document.getElementById("persona2"), countries);
+autocomplete(document.getElementById("persona3"), countries);
+autocomplete(document.getElementById("persona4"), countries);
+autocomplete(document.getElementById("persona5"), countries);
+
+
+//SLIDERS
+var rangeslider = document.getElementById("sliderRange");
+var output = document.getElementById("demo");
+output.innerHTML = rangeslider.value;
+
+rangeslider.oninput = function() {
+  output.innerHTML = this.value;
+}
