@@ -1,14 +1,11 @@
 
+  
+{% extends "layout.html" %}
 
-<!DOCTYPE html>
-    <head>
+{% block title %}Home{% endblock %}
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-        
-        <link rel="stylesheet"  href="resources/css/my-form.css">
-    </head>
-    <body>
+{% block content %}
+
         <form id="regForm" action="/form" autocomplete="off" method="post">
 
             <h1>Encuesta CDMX</h1>
@@ -56,5 +53,5 @@
 
             <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
             <script src="resources/js/my-form.js"></script>
-    </body>
-</html>
+    
+            {% endblock %}
