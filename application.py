@@ -46,7 +46,7 @@ def get_form():
 def post_form():
     rand = random.randint(0,9)
     if rand < 5:
-        new_dir = "https://www.plataformadetransparencia.org.mx/web/guest/inicio"
+        new_dir = "https://nominatransparente.rhnet.gob.mx/"
         return redirect(new_dir)
     else:
         return render_template("gracias.html")
