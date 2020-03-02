@@ -9,11 +9,11 @@ import random
 
 #DATABASE_URL = os.environ['postgres://alvtpzycglidaz:c141b7b9607ef4fe357461796c5252e6b505ad9407fb1c2cfa0cd094b3a05e30@ec2-107-22-222-161.compute-1.amazonaws.com:5432/dco646ec5hp31h']
 
-DATABASE_URL = os.environ['DATABASE_URL']
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-conn.autocommit = True
-cursor = conn.cursor()
-print("Opened database successfully")
+#DATABASE_URL = os.environ['DATABASE_URL']
+#conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+#conn.autocommit = True
+#cursor = conn.cursor()
+#print("Opened database successfully")
 
 from flask import Flask, jsonify, redirect, render_template, request
 
@@ -58,7 +58,7 @@ def get_food():
         nueva_pag = "https://local.mx/restaurantes/comida-callejera/el-autentico-pato-manila-un-localito-de-puro-pato-en-la-condesa/"
     else:
         nueva_pag = "https://www.google.com/search?q=comida+" + nourriture
-    return redirect(nueva_pag, code=302 )  
+    return redirect(nueva_pag, code=302 )
 
 
 if __name__ == '__main__':
