@@ -58,7 +58,7 @@ function validateForm() {
   // This function deals with validation of the form fields
   var x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByTagName("input");
+  y = x[currentTab].getElementsByClassName("mytext") //mytext
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
@@ -112,4 +112,46 @@ output.innerHTML = rangeslider.value;
 
 rangeslider.oninput = function() {
   output.innerHTML = this.value;
+}
+
+
+//Dropdowns
+function AddOther_1(val){
+var element=document.getElementById('otro_1');
+if(val==102)
+  element.style.display='block';
+else
+  element.style.display='none';
+}
+
+function AddOther_2(val){
+var element=document.getElementById('otro_2');
+if(val==102)
+  element.style.display='block';
+else
+  element.style.display='none';
+}
+
+function AddOther_3(val){
+var element=document.getElementById('otro_3');
+if(val==102)
+  element.style.display='block';
+else
+  element.style.display='none';
+}
+
+function AddOther_4(val){
+var element=document.getElementById('otro_4');
+if(val==102)
+  element.style.display='block';
+else
+  element.style.display='none';
+}
+
+function AddOther_5(val){
+var element=document.getElementById('otro_5');
+if(val==102)
+  element.style.display='block';
+else
+  element.style.display='none';
 }
