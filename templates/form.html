@@ -3,271 +3,328 @@
 {% block main %}
 
 <div data-ng-app = "miApp" data-ng-controller="miCtrl">
-        <form id="regForm" action="/form" autocomplete="off" method="post">
-
-            <h1>Encuesta CDMX</h1>
-
-            <!-- One "tab" for each step in the form: -->
-
-
-            <div class="tab">
-              <b>Las respuestas de esta encuesta no serán compartidas con tu jefe y/o compañeros de trabajo.</b>
-              <p></p>
-              <p>Tienes 3 minutos para responder esta pregunta. Hagamos el siguiente ejercicio. Quieres adivinar el salario mensual de 5 de tus compañeros de trabajo (con los que tienes una relación laboral más cercana).</p>
-              <p></p>
-              <p>Escribe el nombre de las cinco personas con las que trabaja más de cerca y en qué división están:</p>
-              <!-- Persona1 -->
-              <div class="autocomplete" style="width:300px;">
-                <input data-ng-model="persona1"  id="persona1"  class="mytext" type="text" placeholder="Persona 1">
-              </div>
-              <select ng-model="selectedDiv1" ng-options="x for x in div"  ng-change="check()" ></select>
-              <p></p>
-              <!-- Persona2 -->
-              <div class="autocomplete" style="width:300px;">
-                <input data-ng-model="persona2"  id="persona2" class="mytext" type="text" placeholder="Persona 2">
-              </div>
-              <select ng-model="selectedDiv2" ng-options="x for x in div"  ng-change="check()" ></select>
-              <!-- Persona3 -->
-              <p></p>
-              <div class="autocomplete" style="width:300px;">
-                <input data-ng-model="persona3"  id="persona3"  class="mytext" type="text" placeholder="Persona 3">
-              </div>
-              <select ng-model="selectedDiv3" ng-options="x for x in div"  ng-change="check()" ></select>
-              <p></p>
-              <!-- Persona4 -->
-              <div class="autocomplete" style="width:300px;">
-                <input data-ng-model="persona4"  id="persona4" class="mytext" type="text" placeholder="Persona 4">
-              </div>
-              <select ng-model="selectedDiv4" ng-options="x for x in div"  ng-change="check()" ></select>
-              <p></p>
-              <!-- Persona5 -->
-              <div class="autocomplete" style="width:300px;">
-                <input data-ng-model="persona5"  id="persona5" class="mytext" type="text" placeholder="Persona 5">
-              </div>
-              <select ng-model="selectedDiv5" ng-options="x for x in div"  ng-change="check()" ></select>
-              <p></p>
+  <form id="regForm" action="/form" autocomplete="off" method="post">
+
+    <h1>Encuesta CDMX</h1>
+
+    <!-- One "tab" for each step in the form: -->
+
+
+    <div class="tab">
+      <b>Las respuestas de esta encuesta no serán compartidas con tu jefe y/o compañeros de trabajo.</b>
+      <p></p>
+      <p>Tienes 3 minutos para responder esta pregunta. Hagamos el siguiente ejercicio. Quieres adivinar el salario mensual de 5 de tus compañeros de trabajo (con los que tienes una relación laboral más cercana).</p>
+      <p></p>
+      <p>Escribe el nombre de las cinco personas con las que trabaja más de cerca y en qué división están:</p>
+      <!-- Persona1 -->
+      <div class="autocomplete" style="width:300px;">
+        <input data-ng-model="persona1"  id="persona1"  class="mytext" type="text" placeholder="Persona 1">
+      </div>
+      <select ng-model="selectedDiv1" ng-options="x for x in div"  ng-change="check()" ></select>
+      <p></p>
+      <!-- Persona2 -->
+      <div class="autocomplete" style="width:300px;">
+        <input data-ng-model="persona2"  id="persona2" class="mytext" type="text" placeholder="Persona 2">
+      </div>
+      <select ng-model="selectedDiv2" ng-options="x for x in div"  ng-change="check()" ></select>
+      <!-- Persona3 -->
+      <p></p>
+      <div class="autocomplete" style="width:300px;">
+        <input data-ng-model="persona3"  id="persona3"  class="mytext" type="text" placeholder="Persona 3">
+      </div>
+      <select ng-model="selectedDiv3" ng-options="x for x in div"  ng-change="check()" ></select>
+      <p></p>
+      <!-- Persona4 -->
+      <div class="autocomplete" style="width:300px;">
+        <input data-ng-model="persona4"  id="persona4" class="mytext" type="text" placeholder="Persona 4">
+      </div>
+      <select ng-model="selectedDiv4" ng-options="x for x in div"  ng-change="check()" ></select>
+      <p></p>
+      <!-- Persona5 -->
+      <div class="autocomplete" style="width:300px;">
+        <input data-ng-model="persona5"  id="persona5" class="mytext" type="text" placeholder="Persona 5">
+      </div>
+      <select ng-model="selectedDiv5" ng-options="x for x in div"  ng-change="check()" ></select>
+      <p></p>
 
-            </div>
+    </div>
 
-            <div class="tab">
+    <div class="tab">
 
-              <p>En este ejercicio tendremos las siguientes reglas: Si tu predicción promedio del salario no se desvía más del 5% del valor real recibirás un premio monetario.</p>
-              <p>Tus 5 compañeros también realizarán ejercicio, y quien obtenga la mejor predicción promedio del salario, tendrá un premio monetario de XXX MXN.</p>
-              <p>En promedio ¿Cuánto cree que ganaron sus 5 compañeros más cercanos en marzo de 2019?</p>
+      <p>En este ejercicio tendremos las siguientes reglas: Si tu predicción promedio del salario no se desvía más del 5% del valor real recibirás un premio monetario.</p>
+      <p>Tus 5 compañeros también realizarán ejercicio, y quien obtenga la mejor predicción promedio del salario, tendrá un premio monetario de XXX MXN.</p>
+      <p>En promedio ¿Cuánto cree que ganaron sus 5 compañeros más cercanos en marzo de 2019?</p>
 
-              <h3> {a persona1 a} </h3>
+      <h3> {a persona1 a} </h3>
 
-              <p>Use la franja oscura para ajustar el salario mensual estimado en pesos mexicanos:</p>
-              <div class="rangeslider">
-                <input type="range" min="1" max="162000" value="200"
-                              class="myslider" id="sliderRange">
-                <p>MXN: <span id="demo"></span></p>
-              </div>
+      <p>Use la franja oscura para ajustar el salario mensual estimado en pesos mexicanos:</p>
+      <div class="rangeslider">
+        <input type="range" min="1" max="162000" value="200"
+        class="myslider" id="sliderRange">
+        <p>MXN: <span id="demo"></span></p>
+      </div>
 
 
-              <p></p>
-              <h3> {a persona2 a} </h3>
-              <p>Use la franja oscura para ajustar el salario mensual estimado en pesos mexicanos:</p>
+      <p></p>
+      <h3> {a persona2 a} </h3>
+      <p>Use la franja oscura para ajustar el salario mensual estimado en pesos mexicanos:</p>
 
 
-              <div class="rangeslider">
-                <input type="range" min="1" max="162000" value="200"
-                              class="myslider" id="sliderRange1">
-                <p>MXN: <span id="demo1"></span></p>
-              </div> <p></p>
+      <div class="rangeslider">
+        <input type="range" min="1" max="162000" value="200"
+        class="myslider" id="sliderRange1">
+        <p>MXN: <span id="demo1"></span></p>
+      </div> <p></p>
 
 
-              <script>
-                var rangeslider1 = document.getElementById("sliderRange1");
-                var output1 = document.getElementById("demo1");
-                output1.innerHTML = rangeslider1.value;
+      <script>
+        var rangeslider1 = document.getElementById("sliderRange1");
+        var output1 = document.getElementById("demo1");
+        output1.innerHTML = rangeslider1.value;
 
-                rangeslider1.oninput = function() {
-                  output1.innerHTML = this.value;
-                }
-                </script>
+        rangeslider1.oninput = function() {
+          output1.innerHTML = this.value;
+        }
+      </script>
 
 
 
-            <h3> {a persona3 a} </h3>
+      <h3> {a persona3 a} </h3>
 
-              <p>Use la franja oscura para ajustar el salario mensual estimado en pesos mexicanos:</p>
+      <p>Use la franja oscura para ajustar el salario mensual estimado en pesos mexicanos:</p>
 
 
-              <div class="rangeslider">
-                <input type="range" min="1" max="161000" value="200"
-                              class="myslider" id="sliderRange2">
-                <p>MXN: <span id="demo2"></span></p>
-              </div> <p></p>
+      <div class="rangeslider">
+        <input type="range" min="1" max="161000" value="200"
+        class="myslider" id="sliderRange2">
+        <p>MXN: <span id="demo2"></span></p>
+      </div> <p></p>
 
 
-              <script>
-                var rangeslider2 = document.getElementById("sliderRange2");
-                var output2 = document.getElementById("demo2");
-                output2.innerHTML = rangeslider2.value;
+      <script>
+        var rangeslider2 = document.getElementById("sliderRange2");
+        var output2 = document.getElementById("demo2");
+        output2.innerHTML = rangeslider2.value;
 
-                rangeslider2.oninput = function() {
-                  output2.innerHTML = this.value;
-                }
-                </script>
+        rangeslider2.oninput = function() {
+          output2.innerHTML = this.value;
+        }
+      </script>
 
 
 
-            <h3> {a persona4 a} </h3>
-              <p>Use la franja oscura para ajustar el salario mensual estimado en pesos mexicanos:</p>
+      <h3> {a persona4 a} </h3>
+      <p>Use la franja oscura para ajustar el salario mensual estimado en pesos mexicanos:</p>
 
-              <div class="rangeslider">
-                <input type="range" min="1" max="161000" value="300"
-                              class="myslider" id="sliderRange3">
-                <p>MXN: <span id="demo3"></span></p>
-              </div> <p></p>
+      <div class="rangeslider">
+        <input type="range" min="1" max="161000" value="300"
+        class="myslider" id="sliderRange3">
+        <p>MXN: <span id="demo3"></span></p>
+      </div> <p></p>
 
 
-              <script>
-                var rangeslider3 = document.getElementById("sliderRange3");
-                var output3 = document.getElementById("demo3");
-                output3.innerHTML = rangeslider3.value;
+      <script>
+        var rangeslider3 = document.getElementById("sliderRange3");
+        var output3 = document.getElementById("demo3");
+        output3.innerHTML = rangeslider3.value;
 
-                rangeslider3.oninput = function() {
-                  output3.innerHTML = this.value;
-                }
-                </script>
+        rangeslider3.oninput = function() {
+          output3.innerHTML = this.value;
+        }
+      </script>
 
 
-              <h3> {a persona5 a} </h3>
+      <h3> {a persona5 a} </h3>
 
-                 <div class="rangeslider">
-                <input type="range" min="1" max="161000" value="400"
-                              class="myslider" id="sliderRange4">
-                <p>MXN: <span id="demo4"></span></p>
-              </div> <p></p>
+      <div class="rangeslider">
+        <input type="range" min="1" max="161000" value="400"
+        class="myslider" id="sliderRange4">
+        <p>MXN: <span id="demo4"></span></p>
+      </div> <p></p>
 
 
-              <script>
-                var rangeslider4 = document.getElementById("sliderRange4");
-                var output4 = document.getElementById("demo4");
-                output4.innerHTML = rangeslider4.value;
+      <script>
+        var rangeslider4 = document.getElementById("sliderRange4");
+        var output4 = document.getElementById("demo4");
+        output4.innerHTML = rangeslider4.value;
 
-                rangeslider4.oninput = function() {
-                  output4.innerHTML = this.value;
-                }
-                </script>
+        rangeslider4.oninput = function() {
+          output4.innerHTML = this.value;
+        }
+      </script>
 
 
-            </div>
+    </div>
 
-            <div class="tab">
-              Ahora, supón que tienes la posibilidad de comprar la siguiente información: el salario promedio de 2 de sus compañeros. Adicionalmente, si compras esta información, podrías usarla para modificar el salario promedio que calculaste en la pregunta anterior.  Esto implica que, al mejorar tu predicción, tendrás mayor probabilidad de ganar el premio de XXX MXN. Dado lo anterior, ¿Cuál es la máxima cantidad que estarías dispuesto a pagar por esta información? Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.
+    <div class="tab">
+      Ahora, supón que tienes la posibilidad de comprar la siguiente información: el salario promedio de 2 de sus compañeros. Adicionalmente, si compras esta información, podrías usarla para modificar el salario promedio que calculaste en la pregunta anterior.  Esto implica que, al mejorar tu predicción, tendrás mayor probabilidad de ganar el premio de XXX MXN. Dado lo anterior, ¿Cuál es la máxima cantidad que estarías dispuesto a pagar por esta información? Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.
 
-              <div class="rangeslider">
-             <input type="range" min="1" max="161000" value="400"
-                           class="myslider" id="sliderRange_c">
-             <p>MXN: <span id="demo_c"></span></p>
-           </div> <p></p>
+      <div class="rangeslider">
+        <input type="range" min="1" max="161000" value="400"
+        class="myslider" id="sliderRange_c">
+        <p>MXN: <span id="demo_c"></span></p>
+      </div> <p></p>
 
 
-           <script>
-             var rangeslider_c = document.getElementById("sliderRange_c");
-             var output_c = document.getElementById("demo_c");
-             output_c.innerHTML = rangeslider_c.value;
+      <script>
+        var rangeslider_c = document.getElementById("sliderRange_c");
+        var output_c = document.getElementById("demo_c");
+        output_c.innerHTML = rangeslider_c.value;
 
-             rangeslider_c.oninput = function() {
-               output_c.innerHTML = this.value;
-             }
-             </script>
+        rangeslider_c.oninput = function() {
+          output_c.innerHTML = this.value;
+        }
+      </script>
 
-            </div>
+    </div>
 
 
 
-            <div class="tab">
-              Antes de seguir con la encuesta, vamos a introducir un nuevo tipo de pregunta. Supongamos que estás jugando el siguiente juego: una moneda es lanzada, y debes adivinar si cae águila o sol. Si adivinas qué cara salió, ganas XX MXN, de lo contrario, ganas 0 MXN. Nota que el valor esperado de la ganancia de este juego es de XX MXN.  Dado lo anterior, ¿Cuál es la máxima cantidad que estarías dispuesto a pagar por esta información? Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.
+    <div class="tab">
+      Antes de seguir con la encuesta, vamos a introducir un nuevo tipo de pregunta. Supongamos que estás jugando el siguiente juego: una moneda es lanzada, y debes adivinar si cae águila o sol. Si adivinas qué cara salió, ganas XX MXN, de lo contrario, ganas 0 MXN. Nota que el valor esperado de la ganancia de este juego es de XX MXN.  Dado lo anterior, ¿Cuál es la máxima cantidad que estarías dispuesto a pagar por esta información? Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.
 
-              <div class="rangeslider">
-             <input type="range" min="1" max="161000" value="400"
-                           class="myslider" id="sliderRange_b">
-             <p>MXN: <span id="demo_b"></span></p>
-           </div> <p></p>
+      <div class="rangeslider">
+        <input type="range" min="1" max="161000" value="400"
+        class="myslider" id="sliderRange_b">
+        <p>MXN: <span id="demo_b"></span></p>
+      </div> <p></p>
 
 
-           <script>
-             var rangeslider_b = document.getElementById("sliderRange_b");
-             var output_b = document.getElementById("demo_b");
-             output_b.innerHTML = rangeslider_b.value;
+      <script>
+        var rangeslider_b = document.getElementById("sliderRange_b");
+        var output_b = document.getElementById("demo_b");
+        output_b.innerHTML = rangeslider_b.value;
 
-             rangeslider_b.oninput = function() {
-               output_b.innerHTML = this.value;
-             }
-             </script>
-            </div>
+        rangeslider_b.oninput = function() {
+          output_b.innerHTML = this.value;
+        }
+      </script>
+    </div>
 
-            <div class="tab">
-              Retomando el primer juego, ingresaste un pronóstico del salario mensual promedio de tus compañeros de trabajo. Si ésta predicción no se aleja más del 5% del valor real, recibirás una recompensa de XX MXN ¿Cuál crees que es la probabilidad de que pronostiques el salario promedio sin desviarte más del 5% de su valor verdadero (es decir, de ganar)?
+    <div class="tab">
+      Retomando el primer juego, ingresaste un pronóstico del salario mensual promedio de tus compañeros de trabajo. Si ésta predicción no se aleja más del 5% del valor real, recibirás una recompensa de XX MXN ¿Cuál crees que es la probabilidad de que pronostiques el salario promedio sin desviarte más del 5% de su valor verdadero (es decir, de ganar)?
 
-              <div class="rangeslider">
-             <input type="range" min="1" max="100" value="50"
-                           class="myslider" id="sliderRange_a">
-             <p>Probabilidad:  <span id="demo_a"></span></p>
-           </div> <p></p>
+      <div class="rangeslider">
+        <input type="range" min="1" max="100" value="50"
+        class="myslider" id="sliderRange_a">
+        <p>Probabilidad:  <span id="demo_a"></span></p>
+      </div> <p></p>
 
 
-           <script>
-             var rangeslider_a = document.getElementById("sliderRange_a");
-             var output_a = document.getElementById("demo_a");
-             output_a.innerHTML = rangeslider_a.value;
+      <script>
+        var rangeslider_a = document.getElementById("sliderRange_a");
+        var output_a = document.getElementById("demo_a");
+        output_a.innerHTML = rangeslider_a.value;
 
-             rangeslider_a.oninput = function() {
-               output_a.innerHTML = this.value;
-             }
-             </script>
-            </div>
+        rangeslider_a.oninput = function() {
+          output_a.innerHTML = this.value;
+        }
+      </script>
+    </div>
 
 
-            <div class="tab">
-              Dado que esperas ganar XX MXN con una probabilidad de XX %, tu premio en valor esperado es de XX MXN. Ahora, te queremos ofrecer una cantidad fija de dinero para dejar de jugar este juego. Hacemos esto con todos los participantes, sin importar su predicción sobre el salario promedio de sus compañeros ¿Cuál es la cantidad mínima que aceptarías para dejar de jugar este juego de predicción?  Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.
+    <div class="tab">
+      Dado que esperas ganar XX MXN con una probabilidad de XX %, tu premio en valor esperado es de XX MXN. Ahora, te queremos ofrecer una cantidad fija de dinero para dejar de jugar este juego. Hacemos esto con todos los participantes, sin importar su predicción sobre el salario promedio de sus compañeros ¿Cuál es la cantidad mínima que aceptarías para dejar de jugar este juego de predicción?  Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.
 
-              <div class="rangeslider">
-              <input type="range" min="1" max="161000" value="400"
-                           class="myslider" id="sliderRange_d">
-              <p>MXN: <span id="demo_d"></span></p>
-              </div> <p></p>
+      <div class="rangeslider">
+        <input type="range" min="1" max="161000" value="400"
+        class="myslider" id="sliderRange_d">
+        <p>MXN: <span id="demo_d"></span></p>
+      </div> <p></p>
 
+      <script>
+        var rangeslider_d = document.getElementById("sliderRange_d");
+        var output_d = document.getElementById("demo_d");
+        output_d.innerHTML = rangeslider_d.value;
 
-              <script>
-              var rangeslider_d = document.getElementById("sliderRange_d");
-              var output_d = document.getElementById("demo_d");
-              output_d.innerHTML = rangeslider_d.value;
+        rangeslider_d.oninput = function() {
+          output_d.innerHTML = this.value;
+        }
+      </script>
+    </div>
 
-              rangeslider_d.oninput = function() {
-               output_d.innerHTML = this.value;
-              }
-              </script>
-              </div>
+    <div class="tab">
+      Algunos participantes serán seleccionados al azar para revisar sus predicciones, y si es necesario, cambiarlas. Imagine que a usted se le da esta semana adicional. Usted puede usar esta semana adicional para buscar información e incrementar la precisión de su predicción. Por ejemplo, podría usar este tiempo para preguntar a algunos de sus compañeros sobre sus salarios. Recuerde que, sin esa semana adicional, usted espera ganar el juego con una probabilidad de XX %. Si usted tiene esa semana agregada ¿Cuál es la nueva probabilidad de que gane ese juego (tener una predicción no más lejana del 5% del valor real)?
 
-              <div class="tab">
-                Algunos participantes serán seleccionados al azar para revisar sus predicciones, y si es necesario, cambiarlas. Imagine que a usted se le da esta semana adicional. Usted puede usar esta semana adicional para buscar información e incrementar la precisión de su predicción. Por ejemplo, podría usar este tiempo para preguntar a algunos de sus compañeros sobre sus salarios. Recuerde que, sin esa semana adicional, usted espera ganar el juego con una probabilidad de XX %. Si usted tiene esa semana agregada ¿Cuál es la nueva probabilidad de que gane ese juego (tener una predicción no más lejana del 5% del valor real)?
-                </div>
+      <div class="rangeslider">
+      <input type="range" min="1" max="100" value="50"
+                   class="myslider" id="sliderRange_e">
+      <p>Probabilidad: <span id="demo_e"></span></p>
+      </div> <p></p>
 
 
+      <script>
+      var rangeslider_e = document.getElementById("sliderRange_e");
+      var output_e = document.getElementById("demo_e");
+      output_e.innerHTML = rangeslider_e.value;
 
+      rangeslider_e.oninput = function() {
+       output_e.innerHTML = this.value;
+      }
+      </script>
+      Ahora, imagina que te da una semana adicional para revisar tu pronóstico, y la puedes usar para buscar información adicional e incrementar la precisión de dicha predicción. Dado que con esa semana adicional esperar ganar el premio con probabilidad XX %, esto implica que el valor esperado de tu premio es (probabilidad*XX MXN). Sin una semana adicional, aceptarías una cantidad de XX MXN para renunciar a jugar el juego. Ahora, con una semana adicional, ¿Cuánto deberíamos pagarte para que renunciaras a jugar el juego? Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.
+      <div class="rangeslider">
+      <input type="range" min="1" max="161000" value="400"
+                   class="myslider" id="sliderRange_f">
+      <p>MXN: <span id="demo_f"></span></p>
+      </div> <p></p>
 
-            <!-- NO EDITAR-->
-            <div style="overflow:auto;">
-              <div style="float:right;">
-                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-              </div>
-            </div>
 
-            <!-- Circles which indicates the steps of the form: -->
-            <div style="text-align:center;margin-top:40px;">
-              <span class="step"></span>
-              <span class="step"></span>
-              <span class="step"></span>
-              <span class="step"></span>
-            </div>
+      <script>
+      var rangeslider_f = document.getElementById("sliderRange_f");
+      var output_f = document.getElementById("demo_f");
+      output_f.innerHTML = rangeslider_f.value;
 
-            </form>
+      rangeslider_f.oninput = function() {
+       output_f.innerHTML = this.value;
+      }
+      </script>
+      </div>
+
+  <div class="tab">
+      ¿Cuál crees que es el salario mensual promedio de todos tus compañeros en una posición similar a la tuya en el mes de marzo de 2019?
+      <div class="rangeslider">
+      <input type="range" min="1" max="161000" value="400"
+                   class="myslider" id="sliderRange_g">
+      <p>MXN: <span id="demo_g"></span></p>
+      </div> <p></p>
+
+
+      <script>
+      var rangeslider_g = document.getElementById("sliderRange_g");
+      var output_g = document.getElementById("demo_g");
+      output_g.innerHTML = rangeslider_g.value;
+
+      rangeslider_g.oninput = function() {
+       output_g.innerHTML = this.value;
+      }
+      </script>
+      </div>
+
+<div class="tab">
+  En la pregunta anterior, reportaste que crees que el salario mensual promedio para marzo de 2019 para los empleados con un cargo similar al tuyo fue de XX MXN. La siguiente pregunta está diseñada para evaluar qué tan seguro te sientes acerca de tu respuesta anterior ¿Con cuál probabilidad crees que el salario promedio verdadero caiga dentro de las siguientes categorías? Las probabilidades deben sumar 100%. Nota: Si aciertas, te premiaremos con XX MXN.
+</div>
+
+
+
+
+    <!-- NO EDITAR-->
+    <div style="overflow:auto;">
+      <div style="float:right;">
+        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+      </div>
+    </div>
+
+    <!-- Circles which indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+    </div>
+
+  </form>
 </div>
 
 
