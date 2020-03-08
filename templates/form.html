@@ -11,17 +11,21 @@
     <!-- One "tab" for each step in the form: -->
 
 
-    <div class="tab">
+    <div class="tab" height:100%>
       <b>Las respuestas de esta encuesta no serán compartidas con tu jefe y/o compañeros de trabajo.</b>
       <p></p>
       <p>Tienes 3 minutos para responder esta pregunta. Hagamos el siguiente ejercicio. Quieres adivinar el salario mensual de 5 de tus compañeros de trabajo (con los que tienes una relación laboral más cercana).</p>
       <p></p>
       <h2>Pregunta 1</h2>
       <p></p>
-      <p>Escribe el nombre de las cinco personas con las que trabaja más de cerca y en qué división están:</p>
+      <p>Escribe el nombre de las cinco personas con las que trabaja más de cerca y en qué división están (en caso de que la divisón no aparezca, por favor marca la opción "OTRO", y escribe su nombre):</p>
       <!-- Persona1 -->
+      <ul></ul>
+      <p></p>
+      <li>Persona 1 (Jefe directo)</li>
+      <p></p>
       <div class="autocomplete" style="width:300px;">
-        <input data-ng-model="persona1"  id="persona1"  class="mytext" type="text" placeholder="Persona 1">
+        <input data-ng-model="persona1"  id="persona1"  class="mytext" type="text" placeholder="Nombre">
       </div>
       <p></p>
 
@@ -131,10 +135,12 @@
               <option value=102>OTRO</option>
       </select><br><br>
       <input type="text" name="otro_1" id="otro_1"  placeholder="Otra división" style='display:none;'/>
-      <p></p>
       <!-- Persona2 -->
+      <p></p>
+      <li>Persona 2</li>
+      <p></p>
       <div class="autocomplete" style="width:300px;">
-        <input data-ng-model="persona2"  id="persona2" class="mytext" type="text" placeholder="Persona 2">
+        <input data-ng-model="persona2"  id="persona2" class="mytext" type="text" placeholder="Nombre">
       </div>
       <p></p>
       <select name="unidad_2" class="myselect" onchange='AddOther_2(this.value);'>
@@ -245,8 +251,10 @@
       <input type="text" name="otro_2" id="otro_2"  placeholder="Otra división" style='display:none;'/>
 <!-- Persona3 -->
       <p></p>
+      <li>Persona 3</li>
+      <p></p>
       <div class="autocomplete" style="width:300px;">
-        <input data-ng-model="persona3"  id="persona3"  class="mytext" type="text" placeholder="Persona 3">
+        <input data-ng-model="persona3"  id="persona3"  class="mytext" type="text" placeholder="Nombre">
       </div>
       <p></p>
       <select name="unidad_3" class="myselect" onchange='AddOther_3(this.value);'>
@@ -355,10 +363,12 @@
               <option value=102>OTRO</option>
       </select><br><br>
       <input type="text" name="otro_3" id="otro_3"  placeholder="Otra división" style='display:none;'/>
-<p></p>
       <!-- Persona4 -->
+      <p></p>
+      <li>Persona 4</li>
+      <p></p>
       <div class="autocomplete" style="width:300px;">
-        <input data-ng-model="persona4"  id="persona4" class="mytext" type="text" placeholder="Persona 4">
+        <input data-ng-model="persona4"  id="persona4" class="mytext" type="text" placeholder="Nombre">
       </div>
       <p></p>
       <select name="unidad_4" class="myselect" onchange='AddOther_4(this.value);'>
@@ -467,10 +477,13 @@
               <option value=102>OTRO</option>
       </select><br><br>
       <input type="text" name="otro_4" id="otro_4"  placeholder="Otra división" style='display:none;'/>
-  <p></p>
+
       <!-- Persona5 -->
+      <p></p>
+      <li>Persona 5</li>
+      <p></p>
       <div class="autocomplete" style="width:300px;">
-        <input data-ng-model="persona5"  id="persona5" class="mytext" type="text" placeholder="Persona 5">
+        <input data-ng-model="persona5"  id="persona5" class="mytext" type="text" placeholder="Nombre">
       </div>
       <p></p>
       <select name="unidad_5" class="myselect" onchange='AddOther_5(this.value);'>
@@ -803,8 +816,7 @@
       <p></p>
       <h2>Pregunta 6</h2>
       <p></p>
-
-      <p>Dado que esperas ganar XX MXN con una probabilidad de {a demo_a a} %, tu premio en valor esperado es de XX MXN.</p>
+      <p>Dado que esperas ganar XX MXN con una probabilidad de {a sliderRange_a a} %, tu premio en valor esperado es de XX MXN.</p>
       <p>
       <p>Ahora te queremos ofrecer una cantidad fija de dinero para dejar de jugar este juego. Hacemos esto con todos los participantes, sin importar su predicción sobre el salario promedio de sus compañeros</p>
       <p>
@@ -879,7 +891,7 @@
       <p></p><p></p>
       <p><b>Nota: </b>Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.</p>
       <p></p>
-      
+
       </div>
 
   <div class="tab">
