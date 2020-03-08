@@ -5,8 +5,9 @@
 <div data-ng-app = "miApp" data-ng-controller="miCtrl">
   <form id="regForm" action="/form" autocomplete="off" method="post">
 
-    <h1>Encuesta CDMX</h1>
-
+<div class="jumbotron text-center">
+    <h1>Encuesta de salarios de la CDMX</h1>
+</div>
     <!-- One "tab" for each step in the form: -->
 
 
@@ -577,33 +578,19 @@
     <div class="tab">
 
       <p>En este ejercicio tendremos las siguientes reglas: Si tu predicción promedio del salario no se desvía más del 5% del valor real recibirás un premio monetario.</p>
-      <p>Tus 5 compañeros también realizarán ejercicio, y quien obtenga la mejor predicción promedio del salario, tendrá un premio monetario de XXX MXN.</p>
+      <p>Tus 5 compañeros también realizarán ejercicio, y quien obtenga la mejor predicción promedio del salario, tendrá un premio monetario de <b>1000 MXN</b>.</p>
       <p>En promedio ¿Cuánto cree que ganaron sus 5 compañeros más cercanos en marzo de 2019?</p>
 
       <h3> {a persona1 a} </h3>
 
-      <p>Use la franja oscura para ajustar el salario mensual estimado en pesos mexicanos:</p>
+      <p>Use la franja  para ajustar el salario mensual estimado en pesos mexicanos:</p>
       <div class="rangeslider">
         <input type="range" min="1" max="162000" value="200"
-        class="myslider" id="sliderRange">
-        <p>MXN ($): <span id="demo"></span></p>
-      </div>
-
-
-      <p></p>
-      <h3> {a persona2 a} </h3>
-      <p>Use la franja oscura para ajustar el salario mensual estimado en pesos mexicanos:</p>
-
-
-      <div class="rangeslider">
-        <input type="range" min="1" max="162000" value="200"
-        class="myslider" id="sliderRange1">
+        class="myslider" id="sliderRangePersona1">
         <p>MXN ($): <span id="demo1"></span></p>
-      </div> <p></p>
-
-
+      </div>
       <script>
-        var rangeslider1 = document.getElementById("sliderRange1");
+        var rangeslider1 = document.getElementById("sliderRangePersona1");
         var output1 = document.getElementById("demo1");
         output1.innerHTML = rangeslider1.value;
 
@@ -612,22 +599,20 @@
         }
       </script>
 
-
-
-      <h3> {a persona3 a} </h3>
-
-      <p>Use la franja oscura para ajustar el salario mensual estimado en pesos mexicanos:</p>
+      <p></p>
+      <h3> {a persona2 a} </h3>
+      <p>Use la franja  para ajustar el salario mensual estimado en pesos mexicanos:</p>
 
 
       <div class="rangeslider">
         <input type="range" min="1" max="162000" value="200"
-        class="myslider" id="sliderRange2">
+        class="myslider" id="sliderRangePersona2">
         <p>MXN ($): <span id="demo2"></span></p>
       </div> <p></p>
 
 
       <script>
-        var rangeslider2 = document.getElementById("sliderRange2");
+        var rangeslider2 = document.getElementById("sliderRangePersona2");
         var output2 = document.getElementById("demo2");
         output2.innerHTML = rangeslider2.value;
 
@@ -638,18 +623,20 @@
 
 
 
-      <h3> {a persona4 a} </h3>
-      <p>Use la franja oscura para ajustar el salario mensual estimado en pesos mexicanos:</p>
+      <h3> {a persona3 a} </h3>
+
+      <p>Use la franja  para ajustar el salario mensual estimado en pesos mexicanos:</p>
+
 
       <div class="rangeslider">
         <input type="range" min="1" max="162000" value="200"
-        class="myslider" id="sliderRange3">
+        class="myslider" id="sliderRangePersona3">
         <p>MXN ($): <span id="demo3"></span></p>
       </div> <p></p>
 
 
       <script>
-        var rangeslider3 = document.getElementById("sliderRange3");
+        var rangeslider3 = document.getElementById("sliderRangePersona3");
         var output3 = document.getElementById("demo3");
         output3.innerHTML = rangeslider3.value;
 
@@ -659,17 +646,19 @@
       </script>
 
 
-      <h3> {a persona5 a} </h3>
+
+      <h3> {a persona4 a} </h3>
+      <p>Use la franja  para ajustar el salario mensual estimado en pesos mexicanos:</p>
 
       <div class="rangeslider">
         <input type="range" min="1" max="162000" value="200"
-        class="myslider" id="sliderRange4">
+        class="myslider" id="sliderRangePersona4">
         <p>MXN ($): <span id="demo4"></span></p>
       </div> <p></p>
 
 
       <script>
-        var rangeslider4 = document.getElementById("sliderRange4");
+        var rangeslider4 = document.getElementById("sliderRangePersona4");
         var output4 = document.getElementById("demo4");
         output4.innerHTML = rangeslider4.value;
 
@@ -679,10 +668,30 @@
       </script>
 
 
+      <h3> {a persona5 a} </h3>
+
+      <div class="rangeslider">
+        <input type="range" min="1" max="162000" value="200"
+        class="myslider" id="sliderRangePersona5">
+        <p>MXN ($): <span id="demo5"></span></p>
+      </div> <p></p>
+
+
+      <script>
+        var rangeslider5 = document.getElementById("sliderRangePersona5");
+        var output5 = document.getElementById("demo5");
+        output5.innerHTML = rangeslider5.value;
+
+        rangeslider5.oninput = function() {
+          output5.innerHTML = this.value;
+        }
+      </script>
+
+
     </div>
 
     <div class="tab">
-      Ahora, supón que tienes la posibilidad de comprar la siguiente información: el salario promedio de 2 de sus compañeros. Adicionalmente, si compras esta información, podrías usarla para modificar el salario promedio que calculaste en la pregunta anterior.  Esto implica que, al mejorar tu predicción, tendrás mayor probabilidad de ganar el premio de XXX MXN. Dado lo anterior, ¿Cuál es la máxima cantidad que estarías dispuesto a pagar por esta información? Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.
+      Ahora, supón que tienes la posibilidad de comprar la siguiente información: el salario promedio de 2 de sus compañeros. Adicionalmente, si compras esta información, podrías usarla para modificar el salario promedio que calculaste en la pregunta anterior.  Esto implica que, al mejorar tu predicción, tendrás mayor probabilidad de ganar el premio de <b>1000 MXN</b>. Dado lo anterior, ¿Cuál es la máxima cantidad que estarías dispuesto a pagar por esta información? Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.
 
       <div class="rangeslider">
         <input type="range" min="1" max="162000" value="200"
@@ -706,7 +715,7 @@
 
 
     <div class="tab">
-      Antes de seguir con la encuesta, vamos a introducir un nuevo tipo de pregunta. Supongamos que estás jugando el siguiente juego: una moneda es lanzada, y debes adivinar si cae águila o sol. Si adivinas qué cara salió, ganas XX MXN, de lo contrario, ganas 0 MXN. Nota que el valor esperado de la ganancia de este juego es de XX MXN.  Dado lo anterior, ¿Cuál es la máxima cantidad que estarías dispuesto a pagar por esta información? Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.
+      Antes de seguir con la encuesta, vamos a introducir un nuevo tipo de pregunta. Supongamos que estás jugando el siguiente juego: una moneda es lanzada, y debes adivinar si cae águila o sol. Si adivinas qué cara salió, ganas <b>100 MXN</b>, de lo contrario, ganas <b>0 MXN</b>. Nota que el valor esperado de la ganancia de este juego es de <b>50 MXN</b>.  Dado lo anterior, ¿Cuál es la máxima cantidad que estarías dispuesto a pagar por esta información? Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.
 
       <div class="rangeslider">
         <input type="range" min="1" max="162000" value="200"
@@ -809,7 +818,7 @@
   <div class="tab">
       ¿Cuál crees que es el salario mensual promedio de todos tus compañeros en una posición similar a la tuya en el mes de marzo de 2019?
       <div class="rangeslider">
-      <input type="range" min="1" max="162000" value="400"
+      <input type="range" min="1" max="162000" value="200"
                    class="myslider" id="sliderRange_g">
       <p>MXN ($): <span id="demo_g"></span></p>
       </div> <p></p>
@@ -825,12 +834,28 @@
       </script>
       </div>
 
-<div class="tab">
-  En la pregunta anterior, reportaste que crees que el salario mensual promedio para marzo de 2019 para los empleados con un cargo similar al tuyo fue de XX MXN. La siguiente pregunta está diseñada para evaluar qué tan seguro te sientes acerca de tu respuesta anterior ¿Con cuál probabilidad crees que el salario promedio verdadero caiga dentro de las siguientes categorías? Las probabilidades deben sumar 100%. Nota: Si aciertas, te premiaremos con XX MXN.
-</div>
+    <div class="tab">
+      <p>En la pregunta anterior, reportaste que crees que el salario mensual promedio para marzo de 2019 para los empleados con un cargo similar al tuyo fue de XX MXN.</p>
+      <p>La siguiente pregunta está diseñada para evaluar qué tan seguro te sientes acerca de tu respuesta anterior ¿Con cuál probabilidad crees que el salario promedio verdadero caiga dentro de las siguientes categorías?</p>
+      <p></p>
+      <p><b>Nota: Las probabilidades deben sumar 1. Si aciertas, te premiaremos con 100 MXN.</b></p>
+      <!--como criterio se usaron quantiles asociados a 0.05, .25, .5, .75, y .95 de SUELDO_TABULAR_BRUTO-->
 
-
-
+      <ul>
+      <li>Por debajo de 3219 MXN</li>
+      <input type="number" step=0.01 id="prob-ivl-1" name="quantity" min="0" max="1">
+      <li>Entre 3220 MXN y 7139 MXN</li>
+      <input type="number" step=0.01 id="prob-ivl-2" name="quantity" min="0" max="1">
+      <li>Entre 7140 MXN y 9807 MXN</li>
+      <input type="number" step=0.01 id="prob-ivl-3" name="quantity" min="1" max="1">
+      <li>Entre 9808 MXN y 13192 MXN</li>
+      <input type="number" step=0.01 id="prob-ivl-4" name="quantity" min="1" max="1">
+      <li>Entre 13192 MXN y 25897 MXN</li>
+      <input type="number" step=0.01 id="prob-ivl-5" name="quantity" min="1" max="1">
+      <li>Más de 25897 MXN</li>
+      <input type="number" step=0.01 id="prob-ivl-5" name="quantity" min="1" max="1">
+      <ul>
+    </div>
 
     <!-- NO EDITAR-->
     <div style="overflow:auto;">
