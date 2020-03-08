@@ -16,11 +16,15 @@
       <p></p>
       <p>Tienes 3 minutos para responder esta pregunta. Hagamos el siguiente ejercicio. Quieres adivinar el salario mensual de 5 de tus compañeros de trabajo (con los que tienes una relación laboral más cercana).</p>
       <p></p>
+      <h2>Pregunta 1</h2>
+      <p></p>
       <p>Escribe el nombre de las cinco personas con las que trabaja más de cerca y en qué división están:</p>
       <!-- Persona1 -->
       <div class="autocomplete" style="width:300px;">
         <input data-ng-model="persona1"  id="persona1"  class="mytext" type="text" placeholder="Persona 1">
       </div>
+      <p></p>
+
       <select name="unidad_1" class="myselect" onchange='AddOther_1(this.value);'>
               <option disabled selected value="División o Unidad">División o Unidad</option>
               <option value=1>AGENCIA DE ATENCION ANIMAL DE LA CDMX</option>
@@ -132,6 +136,7 @@
       <div class="autocomplete" style="width:300px;">
         <input data-ng-model="persona2"  id="persona2" class="mytext" type="text" placeholder="Persona 2">
       </div>
+      <p></p>
       <select name="unidad_2" class="myselect" onchange='AddOther_2(this.value);'>
               <option disabled selected value="División o Unidad">División o Unidad</option>
               <option value=1>AGENCIA DE ATENCION ANIMAL DE LA CDMX</option>
@@ -243,6 +248,7 @@
       <div class="autocomplete" style="width:300px;">
         <input data-ng-model="persona3"  id="persona3"  class="mytext" type="text" placeholder="Persona 3">
       </div>
+      <p></p>
       <select name="unidad_3" class="myselect" onchange='AddOther_3(this.value);'>
               <option disabled selected value="División o Unidad">División o Unidad</option>
               <option value=1>AGENCIA DE ATENCION ANIMAL DE LA CDMX</option>
@@ -354,6 +360,7 @@
       <div class="autocomplete" style="width:300px;">
         <input data-ng-model="persona4"  id="persona4" class="mytext" type="text" placeholder="Persona 4">
       </div>
+      <p></p>
       <select name="unidad_4" class="myselect" onchange='AddOther_4(this.value);'>
               <option disabled selected value="División o Unidad">División o Unidad</option>
               <option value=1>AGENCIA DE ATENCION ANIMAL DE LA CDMX</option>
@@ -465,6 +472,7 @@
       <div class="autocomplete" style="width:300px;">
         <input data-ng-model="persona5"  id="persona5" class="mytext" type="text" placeholder="Persona 5">
       </div>
+      <p></p>
       <select name="unidad_5" class="myselect" onchange='AddOther_5(this.value);'>
               <option disabled selected value="División o Unidad">División o Unidad</option>
               <option value=1>AGENCIA DE ATENCION ANIMAL DE LA CDMX</option>
@@ -576,12 +584,16 @@
     </div>
 
     <div class="tab">
-
+      <p></p>
+      <h2>Pregunta 2</h2>
+      <p></p>
       <p>En este ejercicio tendremos las siguientes reglas: Si tu predicción promedio del salario no se desvía más del 5% del valor real recibirás un premio monetario.</p>
       <p>Tus 5 compañeros también realizarán ejercicio, y quien obtenga la mejor predicción promedio del salario, tendrá un premio monetario de <b>1000 MXN</b>.</p>
       <p>En promedio ¿Cuánto cree que ganaron sus 5 compañeros más cercanos en marzo de 2019?</p>
+      <p></p>
 
-      <h3> {a persona1 a} </h3>
+      <ul>
+      <li> {a persona1 a} </li>
 
       <p>Use la franja  para ajustar el salario mensual estimado en pesos mexicanos:</p>
       <div class="rangeslider">
@@ -600,7 +612,7 @@
       </script>
 
       <p></p>
-      <h3> {a persona2 a} </h3>
+      <li> {a persona2 a} </li>
       <p>Use la franja  para ajustar el salario mensual estimado en pesos mexicanos:</p>
 
 
@@ -623,7 +635,7 @@
 
 
 
-      <h3> {a persona3 a} </h3>
+      <li> {a persona3 a} </li>
 
       <p>Use la franja  para ajustar el salario mensual estimado en pesos mexicanos:</p>
 
@@ -647,7 +659,7 @@
 
 
 
-      <h3> {a persona4 a} </h3>
+      <li> {a persona4 a} </li>
       <p>Use la franja  para ajustar el salario mensual estimado en pesos mexicanos:</p>
 
       <div class="rangeslider">
@@ -668,7 +680,7 @@
       </script>
 
 
-      <h3> {a persona5 a} </h3>
+      <li> {a persona5 a} </li>
 
       <div class="rangeslider">
         <input type="range" min="1" max="162000" value="200"
@@ -687,17 +699,29 @@
         }
       </script>
 
-
+      </ul>
     </div>
 
     <div class="tab">
-      Ahora, supón que tienes la posibilidad de comprar la siguiente información: el salario promedio de 2 de sus compañeros. Adicionalmente, si compras esta información, podrías usarla para modificar el salario promedio que calculaste en la pregunta anterior.  Esto implica que, al mejorar tu predicción, tendrás mayor probabilidad de ganar el premio de <b>1000 MXN</b>. Dado lo anterior, ¿Cuál es la máxima cantidad que estarías dispuesto a pagar por esta información? Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.
+      <p></p>
+      <h2>Pregunta 3</h2>
+      <p></p>
+
+      <p>Ahora, supón que tienes la posibilidad de comprar la siguiente información: el salario promedio de 2 de sus compañeros.</p>
+      <p></p>
+      <p>Adicionalmente, si compras esta información, podrías usarla para modificar el salario promedio que calculaste en la pregunta anterior. Esto implica que, al mejorar tu predicción, tendrás mayor probabilidad de ganar el premio de <b>1000 MXN</b></p>
+      <p></p>
+      <p>Dado lo anterior, <b>¿Cuál es la máxima cantidad que estarías dispuesto a pagar por esta información?</b></p>
+      <p></p>
 
       <div class="rangeslider">
-        <input type="range" min="1" max="162000" value="200"
+        <input type="range" min="0" max="1000" value="50"
         class="myslider" id="sliderRange_c">
         <p>MXN ($): <span id="demo_c"></span></p>
       </div> <p></p>
+
+      <p></p><p></p>
+      <p><b>Nota: </b>Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.</p>
 
 
       <script>
@@ -715,14 +739,20 @@
 
 
     <div class="tab">
-      Antes de seguir con la encuesta, vamos a introducir un nuevo tipo de pregunta. Supongamos que estás jugando el siguiente juego: una moneda es lanzada, y debes adivinar si cae águila o sol. Si adivinas qué cara salió, ganas <b>100 MXN</b>, de lo contrario, ganas <b>0 MXN</b>. Nota que el valor esperado de la ganancia de este juego es de <b>50 MXN</b>.  Dado lo anterior, ¿Cuál es la máxima cantidad que estarías dispuesto a pagar por esta información? Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.
+      <p></p>
+      <h2>Pregunta 4</h2>
+      <p></p>
+
+      <p>Antes de seguir con la encuesta, vamos a introducir un nuevo tipo de pregunta. Supongamos que estás jugando el siguiente juego: una moneda es lanzada, y debes adivinar si cae águila o sol. Si adivinas qué cara salió, ganas <b>100 MXN</b>, de lo contrario, ganas <b>0 MXN</b>. Nota que el valor esperado de la ganancia de este juego es de <b>50 MXN</b>.</p>
+      <p></p>
+      <p>Dado lo anterior, <b>¿Cuál es la máxima cantidad que estarías dispuesto a pagar por esta información?</b> </p>
+      <p></p>
 
       <div class="rangeslider">
-        <input type="range" min="1" max="162000" value="200"
+        <input type="range" min="0" max="1000" value="50"
         class="myslider" id="sliderRange_b">
         <p>MXN ($): <span id="demo_b"></span></p>
-      </div> <p></p>
-
+      </div>
 
       <script>
         var rangeslider_b = document.getElementById("sliderRange_b");
@@ -733,13 +763,25 @@
           output_b.innerHTML = this.value;
         }
       </script>
+
+      <p></p><p></p>
+      <b>Nota: </b>Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.
+      <p></p>
+
     </div>
 
     <div class="tab">
-      Retomando el primer juego, ingresaste un pronóstico del salario mensual promedio de tus compañeros de trabajo. Si ésta predicción no se aleja más del 5% del valor real, recibirás una recompensa de XX MXN ¿Cuál crees que es la probabilidad de que pronostiques el salario promedio sin desviarte más del 5% de su valor verdadero (es decir, de ganar)?
+      <p></p>
+      <h2>Pregunta 5</h2>
+      <p></p>
+
+      <p>Retomando el primer juego, ingresaste un pronóstico del salario mensual promedio de tus compañeros de trabajo. Si ésta predicción no se aleja más del 5% del valor real, recibirás una recompensa de 200 MXN </p>
+      <p><b>¿Cuál crees que es la probabilidad de que pronostiques el salario promedio sin desviarte más del 5% de su valor verdadero (es decir, de ganar)?</b></p>
+      <p></p>
+      <p></p>
 
       <div class="rangeslider">
-        <input type="range" min="1" max="100" value="50"
+        <input type="range" min="0" max="100" value="1"
         class="myslider" id="sliderRange_a">
         <p>Probabilidad (%):  <span id="demo_a"></span></p>
       </div> <p></p>
@@ -758,10 +800,19 @@
 
 
     <div class="tab">
-      Dado que esperas ganar XX MXN con una probabilidad de XX %, tu premio en valor esperado es de XX MXN. Ahora, te queremos ofrecer una cantidad fija de dinero para dejar de jugar este juego. Hacemos esto con todos los participantes, sin importar su predicción sobre el salario promedio de sus compañeros ¿Cuál es la cantidad mínima que aceptarías para dejar de jugar este juego de predicción?  Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.
+      <p></p>
+      <h2>Pregunta 6</h2>
+      <p></p>
+
+      <p>Dado que esperas ganar XX MXN con una probabilidad de {a demo_a a} %, tu premio en valor esperado es de XX MXN.</p>
+      <p>
+      <p>Ahora te queremos ofrecer una cantidad fija de dinero para dejar de jugar este juego. Hacemos esto con todos los participantes, sin importar su predicción sobre el salario promedio de sus compañeros</p>
+      <p>
+      <p><b>¿Cuál es la cantidad mínima que aceptarías para dejar de jugar este juego de predicción?  Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.</b></p>
+      <p>
 
       <div class="rangeslider">
-        <input type="range" min="1" max="162000" value="200"
+        <input type="range" min="0" max="1000" value="50"
         class="myslider" id="sliderRange_d">
         <p>MXN ($): <span id="demo_d"></span></p>
       </div> <p></p>
@@ -778,7 +829,15 @@
     </div>
 
     <div class="tab">
-      Algunos participantes serán seleccionados al azar para revisar sus predicciones, y si es necesario, cambiarlas. Imagine que a usted se le da esta semana adicional. Usted puede usar esta semana adicional para buscar información e incrementar la precisión de su predicción. Por ejemplo, podría usar este tiempo para preguntar a algunos de sus compañeros sobre sus salarios. Recuerde que, sin esa semana adicional, usted espera ganar el juego con una probabilidad de XX %. Si usted tiene esa semana agregada ¿Cuál es la nueva probabilidad de que gane ese juego (tener una predicción no más lejana del 5% del valor real)?
+      <p></p>
+      <h2>Pregunta 7</h2>
+      <p></p>
+
+      <p>Algunos participantes serán seleccionados al azar para revisar sus predicciones, y si es necesario, cambiarlas.</p>
+      <p>Imagina que tienes esa semana adicional. Puedes usar esta semana adicional para buscar información e incrementar la precisión de su predicción. Por ejemplo, podrías usar este tiempo para preguntar a algunos de tus compañeros sobre sus salarios. Recuerda que, sin esa semana adicional, esperas ganar el juego con una probabilidad de XX %.</p>
+      <p></p>
+      <p><b>Si tienes esa semana adicional ¿Cuál es la nueva probabilidad de que gane ese juego (tener una predicción no más lejana del 5% del valor real)?</b></p>
+      <p></p>
 
       <div class="rangeslider">
       <input type="range" min="1" max="100" value="50"
@@ -796,13 +855,16 @@
        output_e.innerHTML = this.value;
       }
       </script>
-      Ahora, imagina que te da una semana adicional para revisar tu pronóstico, y la puedes usar para buscar información adicional e incrementar la precisión de dicha predicción. Dado que con esa semana adicional esperar ganar el premio con probabilidad XX %, esto implica que el valor esperado de tu premio es (probabilidad*XX MXN). Sin una semana adicional, aceptarías una cantidad de XX MXN para renunciar a jugar el juego. Ahora, con una semana adicional, ¿Cuánto deberíamos pagarte para que renunciaras a jugar el juego? Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.
+      <p>Ahora, imagina que te da una semana adicional para revisar tu pronóstico, y la puedes usar para buscar información adicional e incrementar la precisión de dicha predicción.</p>
+      <p></p>
+      <p>Ahora, con una semana adicional, ¿Cuánto deberíamos pagarte para que renunciaras a jugar el juego?</p>
+      <p></p>
+
       <div class="rangeslider">
-      <input type="range" min="1" max="162000" value="200"
+      <input type="range" min="0" max="1000" value="50"
                    class="myslider" id="sliderRange_f">
       <p>MXN ($): <span id="demo_f"></span></p>
-      </div> <p></p>
-
+      </div>
 
       <script>
       var rangeslider_f = document.getElementById("sliderRange_f");
@@ -813,10 +875,21 @@
        output_f.innerHTML = this.value;
       }
       </script>
+
+      <p></p><p></p>
+      <p><b>Nota: </b>Recuerda que estás haciendo la oferta a una computadora, así que conviene responder con sinceridad.</p>
+      <p></p>
+      
       </div>
 
   <div class="tab">
-      ¿Cuál crees que es el salario mensual promedio de todos tus compañeros en una posición similar a la tuya en el mes de marzo de 2019?
+      <p></p>
+      <h2>Pregunta 8</h2>
+      <p></p>
+
+      <p>¿Cuál crees que es el salario mensual promedio de todos tus compañeros en una posición similar a la tuya en el mes de marzo de 2019?</p>
+      <p></p>
+
       <div class="rangeslider">
       <input type="range" min="1" max="162000" value="200"
                    class="myslider" id="sliderRange_g">
@@ -835,26 +908,43 @@
       </div>
 
     <div class="tab">
+      <p></p>
+      <h2>Pregunta 9</h2>
+      <p></p>
+
       <p>En la pregunta anterior, reportaste que crees que el salario mensual promedio para marzo de 2019 para los empleados con un cargo similar al tuyo fue de XX MXN.</p>
       <p>La siguiente pregunta está diseñada para evaluar qué tan seguro te sientes acerca de tu respuesta anterior ¿Con cuál probabilidad crees que el salario promedio verdadero caiga dentro de las siguientes categorías?</p>
       <p></p>
-      <p><b>Nota: Las probabilidades deben sumar 1. Si aciertas, te premiaremos con 100 MXN.</b></p>
       <!--como criterio se usaron quantiles asociados a 0.05, .25, .5, .75, y .95 de SUELDO_TABULAR_BRUTO-->
 
       <ul>
       <li>Por debajo de 3219 MXN</li>
+      <p></p>
       <input type="number" step=0.01 id="prob-ivl-1" name="quantity" min="0" max="1">
+      <p></p>
       <li>Entre 3220 MXN y 7139 MXN</li>
+      <p></p>
       <input type="number" step=0.01 id="prob-ivl-2" name="quantity" min="0" max="1">
+      <p></p>
       <li>Entre 7140 MXN y 9807 MXN</li>
+      <p></p>
       <input type="number" step=0.01 id="prob-ivl-3" name="quantity" min="1" max="1">
+      <p></p>
       <li>Entre 9808 MXN y 13192 MXN</li>
+      <p></p>
       <input type="number" step=0.01 id="prob-ivl-4" name="quantity" min="1" max="1">
+      <p></p>
       <li>Entre 13192 MXN y 25897 MXN</li>
+      <p></p>
       <input type="number" step=0.01 id="prob-ivl-5" name="quantity" min="1" max="1">
+      <p></p>
       <li>Más de 25897 MXN</li>
+      <p></p>
       <input type="number" step=0.01 id="prob-ivl-5" name="quantity" min="1" max="1">
-      <ul>
+      </ul>
+      <p></p><p></p>
+
+      <p><b>Nota: </b> Las probabilidades deben sumar 1. Si aciertas, te premiaremos con 100 MXN.</p>
     </div>
 
     <!-- NO EDITAR-->
